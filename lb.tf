@@ -116,7 +116,7 @@ resource "aws_lb_target_group" "service" {
 
   tags = {
     Cluster   = "${var.name}-${var.environment}"
-    Name      = "${var.name}-${each.key}-${var.environment}"
+    Name      = "${var.name}-${var.environment}-${each.key}"
     Network   = var.vpc_name
     Terraform = "terraform-aws-cluster"
   }
