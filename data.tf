@@ -60,6 +60,11 @@ data "aws_ami" "this" {
     name   = "virtualization-type"
     values = ["hvm"]
   }
+  
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
+  }
 }
 
 data "aws_security_group" "this_private" {
